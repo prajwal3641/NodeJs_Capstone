@@ -32,7 +32,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log("Server is running at port 5000"));
 
 app.get("/testWithoutDatabase", (req, res) => {
-  res.send({
+  res.json({
     message: "Working fine without DB ",
     collections: "users,books,returns,borrows",
   });
