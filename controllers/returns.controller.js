@@ -33,12 +33,10 @@ exports.returnBook = (req, res) => {
           borrows
             .findByIdAndDelete(borrowRecord._id)
             .then(() => {
-              console.log("borrow deleted");
               // Update book availability
               books
                 .findByIdAndUpdate(bookid, { available: true })
                 .then(() => {
-                  console.log("Books made true");
                   return res.status(200).json({
                     message: "Book returned successfully",
                     returnRecord,

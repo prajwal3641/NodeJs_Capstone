@@ -5,9 +5,12 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/Library", {
-    useNewUrlParser: true,
-  })
+  .connect(
+    "mongodb+srv://Prajwalrode:Prajwal31@cluster0.r8oqp.mongodb.net/Library",
+    {
+      useNewUrlParser: true,
+    }
+  )
   .then(() => console.log("Database connected successfully"))
   .catch((err) => {
     console.log("Error connecting database, err ", err.message);
